@@ -1,0 +1,51 @@
+/*
+ * Finish the following method to conform to the @return documentation
+ * 
+ * @param items
+ *          list of strings
+ * @return A reversed list, where every string in the list is also reversed
+ * 
+ * Example
+ * ["ab", "bc", "cd"] -> ["dc", "cb", "ba"]
+ * 
+ */
+ import java.util.ArrayList;
+ import java.util.Collections;
+ import java.util.List;
+ 
+ public class Solution{
+    public static List<String> reverseAll(List<String> items) {
+
+    ArrayList<String> NewList = new ArrayList<String>();
+    
+    int len=items.size();//size of array
+    int i;
+    
+    String tmp="";
+    
+    Collections.reverse(items);//reversing arraylist
+    
+    for(i=0;i<len;i++)//reversing array of strings
+    {
+    System.out.println(items.get(i));
+    StringBuilder str=new StringBuilder();;//clearing previously stored value
+    
+    tmp=str.append(new StringBuffer(items.get(i)).reverse().toString()).toString();//reversing each word
+    
+    NewList.add(tmp);//adding each item
+    
+    }
+
+    return NewList;
+    }
+    
+    public static void main(String args[])
+    {
+        List<String> items = new ArrayList<>();
+        items.add("ab");//adding strings
+        items.add("bc");
+        items.add("cd");
+        List<String> output = reverseAll(items);
+        System.out.println("Reversed list reversed again: " + output);
+    }
+}
